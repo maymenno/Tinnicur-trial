@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Anzeige der aktuellen Frequenz -->
+    <TextView
+        android:id="@+id/frequencyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frequency: 200 Hz"
+        android:textSize="20sp" />
+
+    <!-- Slider zur Frequenzanpassung -->
+    <SeekBar
+        android:id="@+id/frequencySlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="200"
+        android:max="15000"
+        android:progress="200" />
+
+    <!-- Radiobuttons zur Auswahl des Abspielortes -->
+    <RadioGroup
+        android:id="@+id/earSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/bothEars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Both Ears" />
+
+        <RadioButton
+            android:id="@+id/leftEar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left Ear" />
+
+        <RadioButton
+            android:id="@+id/rightEar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right Ear" />
+    </RadioGroup>
+
+    <!-- Play/Pause Button -->
+    <Button
+        android:id="@+id/playPauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play" />
+</LinearLayout>
