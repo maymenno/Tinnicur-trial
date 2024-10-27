@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp" >
 
     <!-- Anzeige der aktuellen Frequenz -->
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="MediTECH Electronic GmbH Logo"
+        android:src="@drawable/meditechlogo" />
+
     <TextView
         android:id="@+id/frequencyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Frequency: 200 Hz"
         android:textSize="20sp" />
 
     <!-- Slider zur Frequenzanpassung -->
     <SeekBar
-        android:id="@+id/frequencySlider"
+        android:id="@+id/frequenzSlider"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:min="200"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
         android:max="15000"
+        android:min="200"
         android:progress="200" />
 
     <!-- Radiobuttons zur Auswahl des Abspielortes -->
@@ -28,6 +41,8 @@
         android:id="@+id/earSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <RadioButton
@@ -55,5 +70,6 @@
         android:id="@+id/playPauseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Play" />
 </LinearLayout>

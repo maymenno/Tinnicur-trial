@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var playPauseButton: Button
     private lateinit var frequencyLabel: TextView
-    private lateinit var frequencySlider: SeekBar
+    private lateinit var frequenzSlider: SeekBar
     private lateinit var bothEars: RadioButton
     private lateinit var leftEar: RadioButton
     private lateinit var rightEar: RadioButton
@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
 
         playPauseButton = findViewById(R.id.playPauseButton)
         frequencyLabel = findViewById(R.id.frequencyLabel)
-        frequencySlider = findViewById(R.id.frequencySlider)
+        frequenzSlider = findViewById(R.id.frequenzSlider)
         bothEars = findViewById(R.id.bothEars)
         leftEar = findViewById(R.id.leftEar)
         rightEar = findViewById(R.id.rightEar)
 
         // Slider Listener zur Frequenzänderung
-        frequencySlider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+        frequenzSlider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 currentFrequency = progress
                 frequencyLabel.text = "Frequency: $progress Hz"
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val channelConfig = when {
-            leftEar.isChecked -> AudioFormat.CHANNEL_OUT_MONO
-            rightEar.isChecked -> AudioFormat.CHANNEL_OUT_MONO
-            else -> AudioFormat.CHANNEL_OUT_STEREO
+            leftEar.isChecked -> AudioFormat.CHANNEL_OUT_MONO // Für linkes Ohr
+            rightEar.isChecked -> AudioFormat.CHANNEL_OUT_MONO // Für rechtes Ohr
+            else -> AudioFormat.CHANNEL_OUT_STEREO // Für beide Ohren (Stereo)
         }
 
         audioTrack = AudioTrack(
